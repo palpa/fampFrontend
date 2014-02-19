@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('fampFrontendApp')
-  .controller('ProductCtrl', function ($scope, product) {
-        product.query( {}, function(response) {
+    .controller('ProductCtrl', function ($scope, products) {
+        products.query({}, function (response) {
             $scope.products = response.products;
         });
-  });
+    });

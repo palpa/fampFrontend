@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: product', function () {
+describe('Service: Products', function () {
 
   // load the service's module
   beforeEach(module('fampFrontendApp'));
 
   // instantiate service
-  var product;
-  beforeEach(inject(function (_product_) {
-    product = _product_;
+  var Products;
+  beforeEach(inject(function (_Products_) {
+    Products = _Products_;
   }));
 
   it('should do something', function () {
-    expect(!!product).toBe(true);
+    expect(!!Products).toBe(true);
   });
 
 });
