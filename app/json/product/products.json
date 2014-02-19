@@ -1,0 +1,23 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "A green door",
+            "price": 12.50,
+            "tags": ["home", "green"]
+        },
+        {
+            "id": 2,
+            "name": "A black door",
+            "price": 17.00,
+            "tags": ["home", "black"]
+        },
+        {
+            "id": 3,
+            "name": "Puerta",
+            "price": 27.00,
+            "tags": ["home", "black"]
+        }
+    ]
+
+}

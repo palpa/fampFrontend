@@ -1,0 +1,8 @@
+<h1>This is the product view:</h1>
+<ul class="products">
+    <li ng-repeat="product in products | filter:query | orderBy:orderProp"
+        class="thumbnail product-listing">
+        <a href="#/products/{{product.id}}">{{product.name}}</a>
+        <p>{{product.tags}}</p>
+    </li>
+</ul>

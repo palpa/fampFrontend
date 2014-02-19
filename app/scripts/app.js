@@ -12,6 +12,10 @@ angular.module('fampFrontendApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/product', {
+        templateUrl: 'views/product.html',
+        controller: 'ProductCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
