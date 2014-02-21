@@ -1,22 +1,34 @@
 'use strict';
 
-angular.module('fampFrontendApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute'
-])
-  .config(function ($routeProvider) {
+var app = angular.module('fampFrontendApp', [
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngRoute'
+]);
+
+app.config(function ($routeProvider, $httpProvider) {
+
+    $httpProvider.responseInterceptors.push('httpInterceptor');
+
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/product', {
-        templateUrl: 'views/product.html',
-        controller: 'ProductCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+        .when('/', {
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl'
+        })
+        .when('/product', {
+            templateUrl: 'views/product.html',
+            controller: 'ProductCtrl'
+        })
+        .when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'LoginCtrl'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
+});
+
+app.run(function (api) {
+    api.init();
+});
