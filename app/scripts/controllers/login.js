@@ -6,14 +6,15 @@ angular.module('fampFrontendApp')
 
         $scope.login = function () {
             var credentials = {
-                username: this.username,
-                password: this.password
+                j_username: this.username,
+                j_password: this.password
             };
 
             var success = function (data) {
                 var token = data.token;
 
-                console.info('token: ' + token);
+                console.log("token");
+                console.log(token);
                 api.init(token);
 
                 $cookieStore.put('token', token);

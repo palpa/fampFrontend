@@ -10,6 +10,8 @@ var app = angular.module('fampFrontendApp', [
 app.config(function ($routeProvider, $httpProvider) {
 
     $httpProvider.responseInterceptors.push('httpInterceptor');
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
     $routeProvider
         .when('/', {

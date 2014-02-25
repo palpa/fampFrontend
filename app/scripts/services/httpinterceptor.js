@@ -8,7 +8,10 @@ angular.module('fampFrontendApp')
             };
 
             var error = function (response) {
+                console.log("response");
+                console.log(response);
                 if (response.status === 401) {
+
                     $location.url('/login');
                 }
 
