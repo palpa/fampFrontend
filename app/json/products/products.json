@@ -1,0 +1,58 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "A green door",
+            "price": 12.50,
+            "tags": ["home", "green"],
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "http://api.example.com/products/1"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "A black door",
+            "price": 17.00,
+            "tags": ["home", "black"],
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "http://api.example.com/products/2"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "A white door",
+            "price": 10.00,
+            "tags": ["home", "white"],
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "http://api.example.com/products/3"
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "rel": "first",
+            "href": "http://api.example.com/products?offset=0&limit=3"
+        },
+        {
+            "rel": "last",
+            "href": "http://api.example.com/products?offset=55&limit=3"
+        },
+        {
+            "rel": "previous",
+            "href": "http://api.example.com/products?offset=3&limit=3"
+        },
+        {
+            "rel": "next",
+            "href": "http://api.example.com/products?offset=9&limit=3"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "id": 1,
+    "name": "A green door",
+    "price": 12.50,
+    "type": "Door",
+    "category": "Home",
+    "tags": ["home", "green"],
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://api.example.com/products/1"
+        },
+        {
+            "rel": "type",
+            "href": "http://api.example.com/product-types/1"
+        },
+        {
+            "rel": "category",
+            "href": "http://api.example.com/product-categories/1"
+        }
+    ]
+}

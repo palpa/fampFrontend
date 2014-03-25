@@ -1,0 +1,49 @@
+{"data": [
+    {
+        "user_id": "42",
+        "name": "Bob",
+        "links": [
+            {
+                "rel": "self",
+                "href": "http://api.example.com/users/42"
+            }
+        ]
+    },
+    {
+        "user_id": "22",
+        "name": "Frank",
+        "links": [
+            {
+                "rel": "self",
+                "href": "http://api.example.com/users/22"
+            }
+        ]
+    },
+    {
+        "user_id": "125",
+        "name": "Sally",
+        "links": [
+            {
+                "rel": "self",
+                "href": "http://api.example.com/users/125"
+            }
+        ]
+    }
+], "links": [
+    {
+        "rel": "first",
+        "href": "http://api.example.com/users?offset=0&limit=3"
+    },
+    {
+        "rel": "last",
+        "href": "http://api.example.com/users?offset=55&limit=3"
+    },
+    {
+        "rel": "previous",
+        "href": "http://api.example.com/users?offset=3&limit=3"
+    },
+    {
+        "rel": "next",
+        "href": "http://api.example.com/users?offset=9&limit=3"
+    }
+]}
