@@ -13,9 +13,9 @@ Installation Steps:
 Usage:
 --------
  * **grunt serve** (Runs the application in watch mode)
- * **grunt tes**t (Runs unit tests)
+ * **grunt test** (Runs unit tests)
  * **grunt dist** (Generates the application production version)
- * **Run E2E tests**  
+ * **Run E2E tests:**
     1. **webdriver.sh start** (Starts Selenium Server)
     2. **grunt protractor-e2e** (Runs e2e tests)
 
