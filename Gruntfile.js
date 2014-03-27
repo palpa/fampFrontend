@@ -54,6 +54,14 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
+      },
+      e2eTest: {
+        files: ['test/e2e/{,*/}*_spec.js',
+          '<%= yeoman.app %>/scripts/{,*/}*.js',
+          '<%= yeoman.app %>/{,*/}*.html',
+          '.tmp/styles/{,*/}*.css',
+          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'],
+        tasks: ['protractor-e2e']
       }
     },
 
@@ -286,7 +294,8 @@ module.exports = function (grunt) {
         'copy:styles',
         'imagemin',
         'svgmin'
-      ]
+      ],
+      protractor_test: ['protractor-chrome', 'protractor-safari', 'protractor-firefox']
     },
 
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
@@ -320,6 +329,38 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'karma.conf.js',
         singleRun: true
+      }
+    },
+
+    protractor: {
+      options: {
+        configFile: "protractor.conf.js",
+        keepAlive: true, // If false, the grunt process stops when the test fails.
+        noColor: false, // If true, protractor will not use colors in its output.
+        args: {
+            // Arguments passed to the command
+        }
+      },
+      chrome: {
+        options: {
+            args: {
+                browser: "chrome"
+            }
+        }
+      },
+      safari: {
+        options: {
+            args: {
+                browser: "safari"
+            }
+        }
+      },
+      firefox: {
+        options: {
+            args: {
+                browser: "firefox"
+            }
+        }
       }
     }
   });
@@ -375,4 +416,12 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.loadNpmTasks('grunt-protractor-runner');
+
+  grunt.registerTask('protractor-chrome', ['protractor:chrome']);
+  grunt.registerTask('protractor-safari', ['protractor:safari']);
+  grunt.registerTask('protractor-firefox', ['protractor:firefox']);
+
+  grunt.registerTask('protractor-e2e', ['concurrent:protractor_test']);
 };
