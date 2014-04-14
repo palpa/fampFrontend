@@ -5,8 +5,8 @@ angular.module('fampFrontendApp')
         return $resource(
             //'json/product/:productId.json'
             //'https://apptestcompany.aws.af.cm/api/products/:productId'
-            'https://apptestcompany.aws.af.cm/'
+            'http://anionsuarez.com.ar:8080/api/products'
             , {}, {
-                query: {method: 'GET', params: {productId: 'all'}, isArray: true}
+                query: {method: 'GET', params: {}, isArray: false}
             });
     }]);
