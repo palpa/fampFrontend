@@ -120,14 +120,16 @@ module.exports = function (grunt) {
     // Empties folders to start fresh
     clean: {
       dist: {
-        files: [{
-          dot: true,
-          src: [
-            '.tmp',
-            '<%= yeoman.dist %>/*',
-            '!<%= yeoman.dist %>/.git*'
-          ]
-        }]
+        files: [
+          {
+            dot: true,
+            src: [
+              '.tmp',
+              '<%= yeoman.dist %>/*',
+              '!<%= yeoman.dist %>/.git*'
+            ]
+          }
+        ]
       },
       server: '.tmp'
     },
@@ -138,12 +140,14 @@ module.exports = function (grunt) {
         browsers: ['last 1 version']
       },
       dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/styles/',
-          src: '{,*/}*.css',
-          dest: '.tmp/styles/'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: '.tmp/styles/',
+            src: '{,*/}*.css',
+            dest: '.tmp/styles/'
+          }
+        ]
       }
     },
 
@@ -154,9 +158,6 @@ module.exports = function (grunt) {
         ignorePath: '<%= yeoman.app %>/'
       }
     },
-
-
-
 
 
     // Renames files for browser caching purposes
@@ -195,22 +196,26 @@ module.exports = function (grunt) {
     // The following *-min tasks produce minified files in the dist folder
     imagemin: {
       dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: '<%= yeoman.dist %>/images'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>/images',
+            src: '{,*/}*.{png,jpg,jpeg,gif}',
+            dest: '<%= yeoman.dist %>/images'
+          }
+        ]
       }
     },
     svgmin: {
       dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist %>/images'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>/images',
+            src: '{,*/}*.svg',
+            dest: '<%= yeoman.dist %>/images'
+          }
+        ]
       }
     },
     htmlmin: {
@@ -221,12 +226,14 @@ module.exports = function (grunt) {
           removeCommentsFromCDATA: true,
           removeOptionalTags: true
         },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.dist %>',
-          src: ['*.html', 'views/{,*/}*.html'],
-          dest: '<%= yeoman.dist %>'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: '<%= yeoman.dist %>',
+            src: ['*.html', 'views/{,*/}*.html'],
+            dest: '<%= yeoman.dist %>'
+          }
+        ]
       }
     },
 
@@ -234,12 +241,14 @@ module.exports = function (grunt) {
     // minsafe compatible so Uglify does not destroy the ng references
     ngmin: {
       dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/concat/scripts',
-          src: '*.js',
-          dest: '.tmp/concat/scripts'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: '.tmp/concat/scripts',
+            src: '*.js',
+            dest: '.tmp/concat/scripts'
+          }
+        ]
       }
     },
 
@@ -253,26 +262,29 @@ module.exports = function (grunt) {
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>',
-          dest: '<%= yeoman.dist %>',
-          src: [
-            '*.{ico,png,txt}',
-            '.htaccess',
-            '*.html',
-            'views/{,*/}*.html',
-            'bower_components/**/*',
-            'images/{,*/}*.{webp}',
-            'fonts/*'
-          ]
-        }, {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: ['generated/*']
-        }]
+        files: [
+          {
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>',
+            dest: '<%= yeoman.dist %>',
+            src: [
+              '*.{ico,png,txt}',
+              '.htaccess',
+              '*.html',
+              'views/{,*/}*.html',
+              'bower_components/**/*',
+              'images/{,*/}*.{webp}',
+              'fonts/*'
+            ]
+          },
+          {
+            expand: true,
+            cwd: '.tmp/images',
+            dest: '<%= yeoman.dist %>/images',
+            src: ['generated/*']
+          }
+        ]
       },
       styles: {
         expand: true,
@@ -295,7 +307,7 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ],
-      protractor_test: ['protractor-chrome', 'protractor-safari', 'protractor-firefox']
+      protractorTest: ['protractor-chrome', 'protractor-safari', 'protractor-firefox']
     },
 
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
@@ -334,32 +346,32 @@ module.exports = function (grunt) {
 
     protractor: {
       options: {
-        configFile: "protractor.conf.js",
+        configFile: 'protractor.conf.js',
         keepAlive: true, // If false, the grunt process stops when the test fails.
         noColor: false, // If true, protractor will not use colors in its output.
         args: {
-            // Arguments passed to the command
+          // Arguments passed to the command
         }
       },
       chrome: {
         options: {
-            args: {
-                browser: "chrome"
-            }
+          args: {
+            browser: 'chrome'
+          }
         }
       },
       safari: {
         options: {
-            args: {
-                browser: "safari"
-            }
+          args: {
+            browser: 'safari'
+          }
         }
       },
       firefox: {
         options: {
-            args: {
-                browser: "firefox"
-            }
+          args: {
+            browser: 'firefox'
+          }
         }
       }
     }
@@ -423,5 +435,5 @@ module.exports = function (grunt) {
   grunt.registerTask('protractor-safari', ['protractor:safari']);
   grunt.registerTask('protractor-firefox', ['protractor:firefox']);
 
-  grunt.registerTask('protractor-e2e', ['concurrent:protractor_test']);
+  grunt.registerTask('protractor-e2e', ['concurrent:protractorTest']);
 };

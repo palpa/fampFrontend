@@ -5,6 +5,6 @@ angular.module('fampFrontendApp')
         return {
             init: function (token) {
                 $http.defaults.headers.common['X-Access-Token'] = token || $cookies.token;
-            }
-        };
-    });
+              }
+          };
+      });

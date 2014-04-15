@@ -1,9 +1,11 @@
 fampFrontend
 ============
 
+*Before committing check and fix js errors running: grunt jshint*
+
 Installation Steps:
 --------
-**(Check Installation Requirements first)*  
+*(Check Installation Requirements first)*
   
  1. **git clone https://github.com/palpa/fampFrontend.git**
  2. **cd fampFrontend**
