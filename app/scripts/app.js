@@ -18,8 +18,8 @@ app.config(function ($routeProvider, $httpProvider) {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
     })
-    .when('/product', {
-      templateUrl: 'views/product.html',
+    .when('/products', {
+      templateUrl: 'views/product-list.html',
       controller: 'ProductCtrl'
     })
     .when('/login', {
